@@ -140,9 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CDDLibrary.cpp" />
-    <ClCompile Include="Iterator.cpp" />
-    <ClCompile Include="List.cpp" />
-    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h" />

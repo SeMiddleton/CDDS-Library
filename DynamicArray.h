@@ -111,4 +111,5 @@ private:
 		return m_length;
 	}
 
+	return;
 }
