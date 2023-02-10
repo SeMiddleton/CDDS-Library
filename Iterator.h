@@ -1,71 +1,69 @@
 #pragma once
 #include "Node.h"
 
-
-template <typename T>
+template<typename T>
 class Iterator
 {
 public:
 	/// <summary>
-	/// The constructor which sets the current node to be null.
+	/// The constructor which sets the current node to be null
 	/// </summary>
 	Iterator();
 
 	/// <summary>
-	/// The constructor that sets the current node equal to the one input
+	/// The constructor which sets the current node equal to the one inputed
 	/// </summary>
 	/// <param name="node"></param>
 	Iterator(Node<T>* node);
 
 	/// <summary>
-	/// Overloads the ++ operator, setting the current node to be equal to the current node's next
+	/// Overload of the ++ operator which sets the current node equal to the current nodes next
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>an iterator pointing to the current node</returns>
 	Iterator<T> operator++();
 
 	/// <summary>
-	/// Overloads the -- operator, setting the current node to be equal to the current node's previous
+	/// Overload of the -- operator which sets the current node equal to the current nodes previous
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>an iterator pointing to the current node</returns>
 	Iterator<T> operator--();
 
 	/// <summary>
-	/// Checks to see if the iterator's current is equal to to the iter's current 
+	/// Checks to see if the iterators current is equal to the iters current
 	/// </summary>
-	/// <param name="iter"></param>
-	/// <returns></returns>
+	/// <param name="iter">the other iterator</param>
+	/// <returns>true if the currents are equal</returns>
 	const bool operator==(const Iterator<T>& iter);
 
 	/// <summary>
-	/// Checks to see if the iterator's current is not equal to to the iter's current 
+	/// Checks to see if the iterators current is not equal to the iters current
 	/// </summary>
-	/// <param name="iter"></param>
-	/// <returns></returns>
+	/// <param name="iter">the other iterator</param>
+	/// <returns>true if the currents are not equal</returns>
 	const bool operator!=(const Iterator<T>& iter);
 
 	/// <summary>
-	/// Overloads the dereference operator, which returns the value in the node the integer is pointing at
+	/// Overload of the dereference operator which returns the value in the node the iterator is pointing at
 	/// </summary>
-	/// <returns></returns>
 	T operator *();
-
 private:
 	Node<T>* m_current;
 };
 
-template <typename T>
-Iterator<T>::Iterator(Node<T>* node)
+template<typename T>
+Iterator<T>::Iterator()
 {
 	m_current = nullptr;
 }
 
 template<typename T>
-inline Iterator<T>::Iterator(Node<T>* node)
+Iterator<T>::Iterator(Node<T>* node)
 {
 	m_current = node;
 }
+
 template<typename T>
-inline Iterator<T> Iterator<T>::operator++()
+Iterator<T> Iterator<T>::operator++()
 {
 	//if the current is null
 	if (m_current == nullptr)
@@ -76,7 +74,7 @@ inline Iterator<T> Iterator<T>::operator++()
 }
 
 template<typename T>
-inline Iterator<T> Iterator<T>::operator--()
+Iterator<T> Iterator<T>::operator--()
 {
 	//if the currents previous is null
 	if (m_current->previous == nullptr)
@@ -87,7 +85,7 @@ inline Iterator<T> Iterator<T>::operator--()
 }
 
 template<typename T>
-inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
+const bool Iterator<T>::operator==(const Iterator<T>& iter)
 {
 	//if either this iterator current is null xor the iters current is null return false
 	if ((bool)(m_current == nullptr) ^ (bool)(iter.m_current == nullptr))
@@ -102,7 +100,7 @@ inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 }
 
 template<typename T>
-inline const bool Iterator<T>::operator!=(const Iterator<T>& iter)
+const bool Iterator<T>::operator!=(const Iterator<T>& iter)
 {
 	if ((bool)(m_current == nullptr) ^ (bool)(iter.m_current == nullptr))
 		return true;
@@ -114,7 +112,7 @@ inline const bool Iterator<T>::operator!=(const Iterator<T>& iter)
 }
 
 template<typename T>
-inline T Iterator<T>::operator*()
+T Iterator<T>::operator*()
 {
 	return m_current->data;
 }
