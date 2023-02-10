@@ -142,6 +142,7 @@
     <ClCompile Include="CDDLibrary.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDDLibrary.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="List.h" />
