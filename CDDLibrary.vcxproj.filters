@@ -32,9 +32,6 @@
     <ClInclude Include="List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CDDLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
